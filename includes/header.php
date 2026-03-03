@@ -29,10 +29,14 @@ session_start();
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
         <?php else: ?>
-            <span id="welcome-text">Welcome, <?php echo htmlspecialchars($_SESSION["first_name"]); ?></span>
-            <div class="user-actions">
-                <a href="dashboard.php">Dashboard</a>
-                <a href="logout.php">Logout</a>
+            <div class="user-dropdown">
+                <span id="welcome-text">Welcome, <?php echo htmlspecialchars($_SESSION["first_name"]); ?></span>
+                <div class="dropdown-content">
+                    <a href="dashboard.php">Dashboard</a>
+                    <a href="profile.php">Profile</a>
+                    <a href="change_password.php">Change Password</a>
+                    <a href="logout.php">Logout</a>
+                </div>
             </div>
         <?php endif; ?>
     </div>
