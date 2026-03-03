@@ -6,6 +6,10 @@ body {
     color: #333;
 }
 
+#change_password_form .form-group {
+    margin-bottom: 20px;
+}
+
 html,
 body {
     height: 100%;
@@ -60,15 +64,14 @@ h3 {
 #login_reg_panel {
     display: flex;
     align-items: center;
-    gap: 15px;
     flex-wrap: nowrap;
     white-space: nowrap;
 }
 
 
 #login_reg_panel a {
-    margin-left: 10px;
-    padding: 5px 10px;
+    margin-left: 6px;
+    padding: 5px 10px 5px 6px;
     border-radius: 4px;
     background-color: #007bff;
     color: #fff;
@@ -77,6 +80,78 @@ h3 {
 
 #login_reg_panel a:hover {
     background-color: #0056b3;
+}
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.user-dropdown #welcome-text {
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.user-dropdown #welcome-text::after {
+    content: " \25BC";
+    font-size: 0.6em;
+    margin-left: 6px;
+}
+
+.user-dropdown #welcome-text:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background-color: #fff;
+    min-width: 220px;
+    padding: 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 30px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    background-color: #fff;
+    margin-bottom: 2px;
+}
+
+.dropdown-content a:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+    background-color: #e4def3;
+    color: #591e9d;
+}
+
+.dropdown-content a:visited {
+    color: #333;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
 }
 
 #content {
@@ -158,14 +233,18 @@ footer {
 
 #login_form input[type="text"],
 #login_form input[type="email"],
-#login_form input[type="password"] {
+#login_form input[type="password"],
+#change_password_form input[type="text"],
+#change_password_form input[type="email"],
+#change_password_form input[type="password"] {
     width: 100%;
     padding: 8px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-#login_form input[type="submit"] {
+#login_form input[type="submit"],
+#change_password_form input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -176,7 +255,8 @@ footer {
     cursor: pointer;
 }
 
-#login_form input[type="submit"]:hover {
+#login_form input[type="submit"]:hover,
+#change_password_form input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
@@ -198,6 +278,66 @@ footer {
     text-align: center;
     margin-bottom: 20px;
 }
+
+#change_password_form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#profile {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#profile h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile-actions .dashboard-link {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.08s;
+}
+
+.profile-actions .dashboard-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.profile-actions .dashboard-link.logout {
+    background-color: #dc3545;
+}
+
+.profile-actions .dashboard-link.logout:hover {
+    background-color: #b02a37;
+}
+
+#change_password_form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 
 #register_form .form-group {
     margin-bottom: 15px;
